@@ -22802,17 +22802,17 @@ function beatboy() {
 //blues = 0.01%, purple = 0.01%, pink = 0.01%, red = 0.01%, knife = 99.95%
 
 var rarityValue = {
-	milspec: 0.01,
-	restricted: 0.01,
-	classified: 0.01,
-	stattrak: 0.01,
-	covert: 99.95,
+	milspec: 2.05,
+	restricted: 2.05,
+	classified: 2.05,
+	stattrak: 2.05,
+	covert: 91.80,
 };
 
 function randSkin() {
 	var skinsArray = [];
 	var randSkin = "";
-	var randNum = Math.random().toFixed(3); //rounded to 3 places to make it slightly easier to get certain rarities
+	var randNum = Math.random().toFixed(1); //rounded to 3 places to make it slightly easier to get certain rarities
 	var rarity = "";
 	var identifier;
 
@@ -24176,13 +24176,13 @@ $(document).on('click','#btnFlip',function() {
 			var userChoice = prompt("Do you choose T or CT?").toUpperCase();
 			var coinToss = Math.random();
 			if (userChoice === "T") {
-				if (coinToss < 1000) {
+				if (coinToss < 99.98) {
 					money += z;
 				} else {
 					money -= x;
 				}
 			} else {
-				if (coinToss < 0) {
+				if (coinToss < 0.01) {
 					money -= x;
 				} else {
 					money += z;

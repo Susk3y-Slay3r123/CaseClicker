@@ -24002,10 +24002,7 @@ function jackpotStart() {
 		var keys = Object.keys(pot);
 		for (var i = 0; i < keys.length; i++) {
 			var rarity = atob(pot[keys[i]]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
-			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion") {
-				rarity = "knife";
-			}
-			var item = eval(atob(pot[keys[i]]));
+			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")
 			var name = item["name"];
 			var price = "$" + item["price"].toFixed(2);
 			var img = item["img"] + "/70fx70f";

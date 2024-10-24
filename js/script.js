@@ -22799,14 +22799,14 @@ function beatboy() {
 //cases -> case# -> rarity  -> weaponname, price, img
 //cases -> case1 -> milspec -> weap1.name
 
-//blues = 70%, purple = 20%, pink = 5%, red = 2.50%, knife = 0.50%
+//blues = 0.01%, purple = 0.01%, pink = 0.01%, red = 0.01%, knife = 99.95%
 
 var rarityValue = {
-	milspec: 0.50,
-	restricted: 2.50,
-	classified: 5,
-	stattrak: 20,
-	covert: 70
+	milspec: 0.01,
+	restricted: 0.01,
+	classified: 0.01,
+	stattrak: 0.01,
+	covert: 99.95,
 };
 
 function randSkin() {

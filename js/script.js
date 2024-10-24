@@ -22802,11 +22802,11 @@ function beatboy() {
 //blues = 70%, purple = 20%, pink = 5%, red = 2.50%, knife = 0.50%
 
 var rarityValue = {
-	milspec: 0.75,
-	restricted: 0.92,
-	classified: 0.97,
-	stattrak: 0.98,
-	covert: 0.995
+	milspec: 0.50,
+	restricted: 2.50,
+	classified: 5,
+	stattrak: 20,
+	covert: 70
 };
 
 function randSkin() {
@@ -23562,7 +23562,7 @@ var jackpotAI = {
 	bot1: ["jGal | CSGOClicker.net", 1, "https://i.imgur.com/WTjn0MM.png"],
 	bot2: ["exochase", 1, "https://i.imgur.com/za6Y17z.png"],
 	bot3: ["S5E3", 1, "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/62/62001ac6b067182b65f92fa07797c630af64bb4a_full.jpg"],
-	bot4: ["MR.BEATS", 2, "https://i.imgur.com/dIs0yE8.png"],
+	bot4: ["MR.COCKS", 2, "https://i.imgur.com/dIs0yE8.png"],
 	bot5: ["CockCrusher19", 2, "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/03/03b0621515c85e256c20a8f169737430fa57281d_full.jpg"],
 	bot6: ["Octane | n OU", 2, "https://i.imgur.com/P2hwwIE.png"],
 	bot7: ["Moon Cricket Butler", 3, "https://i.imgur.com/qNsPKRH.png"],
@@ -23579,17 +23579,17 @@ var jackpotAI = {
 	bot18: ["sp00ky gh0stman", 6, "https://i.imgur.com/ISxQyow.png"],
 	bot19: ["storM", 7, "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e5/e51667b64e8591b8428b4fc268fc826f21a982cf_full.jpg"],
 	bot20: ["Earth", 8, "https://i.imgur.com/uwIoGpM.jpg"],
-	bot21: ["UnderWater", 8, "https://i.imgur.com/7BTk8ig.jpg"],
-	bot22: ["Morty", 8, "https://i.imgur.com/Skzow5x.jpg"],
-	bot23: ["Doge", 8, "https://i.gyazo.com/c69e8efdccc0c9a03f69df5206a57d21.png"],
-	bot24: ["MyBack", 8, "https://i.imgur.com/sDpf0y3.jpg"],
-	bot25: ["Skittle", 8, "https://i.imgur.com/Zi9J6CJ.jpg"],
-	bot26: ["SirRazor", 8, "https://i.imgur.com/4WA3vTU.jpg"],
-	bot27: ["DennyB", 8, "https://i.imgur.com/VNE57CT.jpg"],
-	bot28: ["Bio", 8, "https://i.imgur.com/acTRiBk.jpg"],
-	bot29: ["Tiny", 8, "https://i.imgur.com/2aOas2H.jpg"],
-	bot30: ["Toshiyuki", 8, "https://i.imgur.com/rNszEvF.jpg"],
-	bot31: ["King of KFC Jamal", 9, "https://i.imgur.com/XhFlH2S.jpg"]
+	bot21: ["Jasper", 8, "https://i.imgur.com/7BTk8ig.jpg"],
+	bot22: ["Heidi", 8, "https://i.imgur.com/Skzow5x.jpg"],
+	bot23: ["Luna", 8, "https://i.gyazo.com/c69e8efdccc0c9a03f69df5206a57d21.png"],
+	bot24: ["Jupiter", 8, "https://i.imgur.com/sDpf0y3.jpg"],
+	bot25: ["Jack", 8, "https://i.imgur.com/Zi9J6CJ.jpg"],
+	bot26: ["Shit", 8, "https://i.imgur.com/4WA3vTU.jpg"],
+	bot27: ["Pussy", 8, "https://i.imgur.com/VNE57CT.jpg"],
+	bot28: ["Boobys", 8, "https://i.imgur.com/acTRiBk.jpg"],
+	bot29: ["12 inch cock", 8, "https://i.imgur.com/2aOas2H.jpg"],
+	bot30: ["Short", 8, "https://i.imgur.com/rNszEvF.jpg"],
+	bot31: ["How are you?", 9, "https://i.imgur.com/XhFlH2S.jpg"]
 };
 
 var jackpotPots = {

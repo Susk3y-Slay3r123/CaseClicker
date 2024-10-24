@@ -24190,7 +24190,7 @@ $(document).on('click','#btnFlip',function() {
 					money -= x;
 				}
 			} else {
-				if (coinToss < 100) {
+				if (coinToss < 0.5) {
 					money -= x;
 				} else {
 					money += z;

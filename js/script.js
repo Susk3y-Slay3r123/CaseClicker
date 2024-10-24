@@ -24184,13 +24184,13 @@ $(document).on('click','#btnFlip',function() {
 			var userChoice = prompt("Do you choose T or CT?").toUpperCase();
 			var coinToss = Math.random();
 			if (userChoice === "T") {
-				if (coinToss < 100) {
+				if (coinToss < 1000) {
 					money += z;
 				} else {
 					money -= x;
 				}
 			} else {
-				if (coinToss < 0.5) {
+				if (coinToss < 0) {
 					money -= x;
 				} else {
 					money += z;

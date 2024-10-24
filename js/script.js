@@ -22826,7 +22826,7 @@ function randSkin() {
 		rarity = "stattrak";
 	} else if (randNum >= rarityValue.stattrak && randNum <= rarityValue.covert) {
 		rarity = "covert";
-	} else {
+	} else if (randNum >= rarityValue.stattrak && randNum <= rarityValue.covert) {
 		rarity = "knife";
 	}
 
@@ -22839,7 +22839,7 @@ function randSkin() {
 				knifeCase = "chromast";
 			} else if (currentCase === "case14") {
 				knifeCase = "chroma";
-			} else if (currentCase === "case14") {
+			} else if (currentCase === "case12") {
 				knifeCase = "chromast";
 			} else if (currentCase === "case19") {
 				knifeCase = "chroma";
@@ -23515,10 +23515,8 @@ function drawJackpotSwapItem(name, price, img, id) {
 function drawSwappedItem(name, price, img, id) {
 	var keys = Object.keys(inventory);
 	var rarity = atob(inventory[id]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
-	if (rarity === "regular" || rarity === "falchionst" || rarity === "bowie" || rarity === "bowiest" || rarity === "butterst" || rarity === "chromast" || rarity === "gamma" || rarity === "chroma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion") {
-		rarity = "knife";
-	}
-
+	if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")
+	var item = eval(atob(inventory[keys[i]]));
 	var name = name;
 	var price = "$" + price.toFixed(2);
 	var img = img + "/70fx70f";
@@ -23538,9 +23536,7 @@ function drawSwapInventory() {
 
 	for (var i = 0; i < keys.length; i++) {
 		var rarity = atob(inventory[keys[i]]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
-		if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion") {
-			rarity = "knife";
-		}
+		if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")
 		var item = eval(atob(inventory[keys[i]]));
 		var name = item["name"];
 		var price = "$" + item["price"].toFixed(2);
@@ -23764,9 +23760,7 @@ function jackpotStart() {
 
 		for (var i = 0; i < keys.length; i++) {
 			var rarity = atob(pot[keys[i]]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
-			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion") {
-				rarity = "knife";
-			}
+			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")        
 			var item = eval(atob(pot[keys[i]]));
 			var name = item["name"];
 			var price = item["price"].toFixed(2);
@@ -24003,6 +23997,7 @@ function jackpotStart() {
 		for (var i = 0; i < keys.length; i++) {
 			var rarity = atob(pot[keys[i]]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
 			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")
+			var item = eval(atob(inventory[keys[i]]));
 			var name = item["name"];
 			var price = "$" + item["price"].toFixed(2);
 			var img = item["img"] + "/70fx70f";

@@ -15,7 +15,7 @@ if (localStorage.getItem("imgData") === null) {
 }
 
 var currentCase = "case1";
-var acceptMoneyPerClick = 0.10;
+var acceptMoneyPerClick = 0.1;
 
 /*=========================Inventory============================*/
 //In inventory: weap skins
@@ -23,7 +23,7 @@ var acceptMoneyPerClick = 0.10;
 
 
 //sorting: by money, rarity
-var popup = false;
+var popup = true;
 var unboxsound = true;
 var menusound = true;
 var lostsound = true;
@@ -22799,20 +22799,20 @@ function beatboy() {
 //cases -> case# -> rarity  -> weaponname, price, img
 //cases -> case1 -> milspec -> weap1.name
 
-//blues = 0.01%, purple = 0.01%, pink = 0.01%, red = 0.01%, knife = 99.95%
+//blues = 70%, purple = 20%, pink = 5%, red = 2.50%, knife = 0.50%
 
 var rarityValue = {
-	milspec: 2.05,
-	restricted: 2.05,
-	classified: 2.05,
-	stattrak: 2.05,
-	covert: 91.80,
+	milspec: 0.75,
+	restricted: 0.92,
+	classified: 0.97,
+	stattrak: 0.98,
+	covert: 0.995
 };
 
 function randSkin() {
 	var skinsArray = [];
 	var randSkin = "";
-	var randNum = Math.random().toFixed(1); //rounded to 3 places to make it slightly easier to get certain rarities
+	var randNum = Math.random().toFixed(3); //rounded to 3 places to make it slightly easier to get certain rarities
 	var rarity = "";
 	var identifier;
 
@@ -22826,7 +22826,7 @@ function randSkin() {
 		rarity = "stattrak";
 	} else if (randNum >= rarityValue.stattrak && randNum <= rarityValue.covert) {
 		rarity = "covert";
-	} else if (randNum >= rarityValue.stattrak && randNum <= rarityValue.covert) {
+	} else {
 		rarity = "knife";
 	}
 
@@ -22839,7 +22839,7 @@ function randSkin() {
 				knifeCase = "chromast";
 			} else if (currentCase === "case14") {
 				knifeCase = "chroma";
-			} else if (currentCase === "case12") {
+			} else if (currentCase === "case14") {
 				knifeCase = "chromast";
 			} else if (currentCase === "case19") {
 				knifeCase = "chroma";
@@ -23515,8 +23515,10 @@ function drawJackpotSwapItem(name, price, img, id) {
 function drawSwappedItem(name, price, img, id) {
 	var keys = Object.keys(inventory);
 	var rarity = atob(inventory[id]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
-	if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")
-	var item = eval(atob(inventory[keys[i]]));
+	if (rarity === "regular" || rarity === "falchionst" || rarity === "bowie" || rarity === "bowiest" || rarity === "butterst" || rarity === "chromast" || rarity === "gamma" || rarity === "chroma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion") {
+		rarity = "knife";
+	}
+
 	var name = name;
 	var price = "$" + price.toFixed(2);
 	var img = img + "/70fx70f";
@@ -23536,7 +23538,9 @@ function drawSwapInventory() {
 
 	for (var i = 0; i < keys.length; i++) {
 		var rarity = atob(inventory[keys[i]]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
-		if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")
+		if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion") {
+			rarity = "knife";
+		}
 		var item = eval(atob(inventory[keys[i]]));
 		var name = item["name"];
 		var price = "$" + item["price"].toFixed(2);
@@ -23558,7 +23562,7 @@ var jackpotAI = {
 	bot1: ["jGal | CSGOClicker.net", 1, "https://i.imgur.com/WTjn0MM.png"],
 	bot2: ["exochase", 1, "https://i.imgur.com/za6Y17z.png"],
 	bot3: ["S5E3", 1, "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/62/62001ac6b067182b65f92fa07797c630af64bb4a_full.jpg"],
-	bot4: ["MR.COCKS", 2, "https://i.imgur.com/dIs0yE8.png"],
+	bot4: ["MR.BEATS", 2, "https://i.imgur.com/dIs0yE8.png"],
 	bot5: ["CockCrusher19", 2, "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/03/03b0621515c85e256c20a8f169737430fa57281d_full.jpg"],
 	bot6: ["Octane | n OU", 2, "https://i.imgur.com/P2hwwIE.png"],
 	bot7: ["Moon Cricket Butler", 3, "https://i.imgur.com/qNsPKRH.png"],
@@ -23575,17 +23579,17 @@ var jackpotAI = {
 	bot18: ["sp00ky gh0stman", 6, "https://i.imgur.com/ISxQyow.png"],
 	bot19: ["storM", 7, "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e5/e51667b64e8591b8428b4fc268fc826f21a982cf_full.jpg"],
 	bot20: ["Earth", 8, "https://i.imgur.com/uwIoGpM.jpg"],
-	bot21: ["Jasper", 8, "https://i.imgur.com/7BTk8ig.jpg"],
-	bot22: ["Heidi", 8, "https://i.imgur.com/Skzow5x.jpg"],
-	bot23: ["Luna", 8, "https://i.gyazo.com/c69e8efdccc0c9a03f69df5206a57d21.png"],
-	bot24: ["Jupiter", 8, "https://i.imgur.com/sDpf0y3.jpg"],
-	bot25: ["Jack", 8, "https://i.imgur.com/Zi9J6CJ.jpg"],
-	bot26: ["Shit", 8, "https://i.imgur.com/4WA3vTU.jpg"],
-	bot27: ["Pussy", 8, "https://i.imgur.com/VNE57CT.jpg"],
-	bot28: ["Boobys", 8, "https://i.imgur.com/acTRiBk.jpg"],
-	bot29: ["12 inch cock", 8, "https://i.imgur.com/2aOas2H.jpg"],
-	bot30: ["Short", 8, "https://i.imgur.com/rNszEvF.jpg"],
-	bot31: ["How are you?", 9, "https://i.imgur.com/XhFlH2S.jpg"]
+	bot21: ["UnderWater", 8, "https://i.imgur.com/7BTk8ig.jpg"],
+	bot22: ["Morty", 8, "https://i.imgur.com/Skzow5x.jpg"],
+	bot23: ["Doge", 8, "https://i.gyazo.com/c69e8efdccc0c9a03f69df5206a57d21.png"],
+	bot24: ["MyBack", 8, "https://i.imgur.com/sDpf0y3.jpg"],
+	bot25: ["Skittle", 8, "https://i.imgur.com/Zi9J6CJ.jpg"],
+	bot26: ["SirRazor", 8, "https://i.imgur.com/4WA3vTU.jpg"],
+	bot27: ["DennyB", 8, "https://i.imgur.com/VNE57CT.jpg"],
+	bot28: ["Bio", 8, "https://i.imgur.com/acTRiBk.jpg"],
+	bot29: ["Tiny", 8, "https://i.imgur.com/2aOas2H.jpg"],
+	bot30: ["Toshiyuki", 8, "https://i.imgur.com/rNszEvF.jpg"],
+	bot31: ["King of KFC Jamal", 9, "https://i.imgur.com/XhFlH2S.jpg"]
 };
 
 var jackpotPots = {
@@ -23760,7 +23764,9 @@ function jackpotStart() {
 
 		for (var i = 0; i < keys.length; i++) {
 			var rarity = atob(pot[keys[i]]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
-			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")        
+			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion") {
+				rarity = "knife";
+			}
 			var item = eval(atob(pot[keys[i]]));
 			var name = item["name"];
 			var price = item["price"].toFixed(2);
@@ -23996,8 +24002,10 @@ function jackpotStart() {
 		var keys = Object.keys(pot);
 		for (var i = 0; i < keys.length; i++) {
 			var rarity = atob(pot[keys[i]]).replace(/\[[^\[]*$/g, "").match(/\[[^\[]*$/g).toString().match(/\b\w*\b/)[0];
-			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion" || rarity === "knife")
-			var item = eval(atob(inventory[keys[i]]));
+			if (rarity === "regular" || rarity === "bowie" || rarity === "bowiest" || rarity === "falchionst" || rarity === "butterst" || rarity === "chromast" || rarity === "chroma" || rarity === "gamma" || rarity === "huntsman" || rarity === "huntst" || rarity === "butterfly" || rarity === "shadow" || rarity === "shadowst" || rarity === "falchion") {
+				rarity = "knife";
+			}
+			var item = eval(atob(pot[keys[i]]));
 			var name = item["name"];
 			var price = "$" + item["price"].toFixed(2);
 			var img = item["img"] + "/70fx70f";
@@ -24173,16 +24181,16 @@ $(document).on('click','#btnFlip',function() {
 		} else {
 			var y = 2;
 			var z = x * y;
-			var userChoice = prompt("Do you choose T or CT?").toUpperCase();
+			var userChoice = prompt("Do you choose Heads /T/ or Teals /CT/?").toUpperCase();
 			var coinToss = Math.random();
 			if (userChoice === "T") {
-				if (coinToss < 99.98) {
+				if (coinToss < 1000) {
 					money += z;
 				} else {
 					money -= x;
 				}
 			} else {
-				if (coinToss < 0.01) {
+				if (coinToss < 0) {
 					money -= x;
 				} else {
 					money += z;

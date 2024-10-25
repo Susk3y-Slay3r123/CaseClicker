@@ -24184,13 +24184,13 @@ $(document).on('click','#btnFlip',function() {
 			var userChoice = prompt("Do you choose Heads /T/ or Teals /CT/?").toUpperCase();
 			var coinToss = Math.random();
 			if (userChoice === "T") {
-				if (coinToss < 1000) {
+				if (coinToss < 0.5) {
 					money += z;
 				} else {
 					money -= x;
 				}
 			} else {
-				if (coinToss < 0) {
+				if (coinToss < 0.5) {
 					money -= x;
 				} else {
 					money += z;
